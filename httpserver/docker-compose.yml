@@ -25,5 +25,5 @@ services:
 networks:
   backend:
 
-  volumes:
+volumes:
   redis-data:
