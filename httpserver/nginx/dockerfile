@@ -1,0 +1,13 @@
+# Установка базового образа
+FROM nginx:latest
+
+# Копирование конфигурационных файлов для Nginx
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Установка порта
+EXPOSE 80
+
+# Отключение демонизированного режима для Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
+COPY nginx/nginx.conf /path/to/nginx

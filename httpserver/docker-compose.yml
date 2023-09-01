@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+    - 8080:8080
+    depends_on:
+    - redis
+    networks:
+    - backend
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    command: redis-server
+    volumes:
+    - redis-data:/data
+    networks:
+    - backend
+
+networks:
+  backend:
+
+  volumes:
+  redis-data:

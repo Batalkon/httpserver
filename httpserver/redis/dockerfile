@@ -1,0 +1,6 @@
+# Установка базового образа
+FROM redis:latest
+
+COPY redis/redis.conf /path/to/redis
+
+# Опционально: Дополнительные настройки для Redis
